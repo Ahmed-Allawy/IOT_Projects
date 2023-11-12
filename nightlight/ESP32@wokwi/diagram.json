@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -38.4, "left": -100.76, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 9.6,
+      "left": -327.2,
+      "rotate": 90,
+      "attrs": { "travelLength": "30" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -61.2, "left": 13.4, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "h115.2", "v28.8" ] ],
+    [ "esp:34", "pot1:SIG", "green", [ "h-19.05", "v-86.4", "h-116" ] ],
+    [ "led1:A", "esp:5", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v0" ] ],
+    [ "esp:GND.1", "pot1:GND", "black", [ "h-95.85", "v52.4" ] ]
+  ],
+  "dependencies": {}
+}

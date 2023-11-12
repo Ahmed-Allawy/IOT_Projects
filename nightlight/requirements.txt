@@ -1,0 +1,6 @@
+counterfit
+counterfit_shims_grove
+Werkzeug==2.2.2
+paho-mqtt
+
+# pip install -r requirements.txt
