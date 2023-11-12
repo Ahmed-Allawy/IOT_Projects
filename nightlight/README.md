@@ -37,7 +37,7 @@
 
 ------>   لعمل سيميوليشن لبعض السينسورات  
 
-# <img src="images\7.png" alt="" style="width:30px;height:30px;"> التركيب والتثبيت
+# <img src="images\7.PNG" alt="" style="width:30px;height:30px;"> التركيب والتثبيت
 
 ## => الهاردوير
 <img src="images\7.PNG" >
