@@ -1,0 +1,12 @@
+# python3 -m venv .venv
+# .venv\Scripts\activate.bat
+# pip install -r requirements.txt
+
+counterfit
+counterfit_shims_grove
+counterfit_shims_seeed_python_dht
+Werkzeug==2.2.2
+paho-mqtt
+pandas
+matplotlib
+
