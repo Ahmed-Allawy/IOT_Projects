@@ -1,0 +1,12 @@
+# python3 -m venv .venv
+# .venv\Scripts\activate.bat
+# pip install -r requirements.txt
+
+paho-mqtt
+numpy
+scikit-learn
+sktime
+counterfit
+counterfit_shims_grove
+Werkzeug==2.2.2
+counterfit_shims_seeed_python_dht
