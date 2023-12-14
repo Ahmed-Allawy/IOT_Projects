@@ -1,0 +1,6 @@
+# DO NOT include azure-functions-worker in this file
+# The Python Worker is managed by Azure Functions platform
+# Manually managing azure-functions-worker may cause unexpected issues
+# azurite --location azurite
+azure-functions
+azure-iot-hub # python3 -m pip install azure_iot_hub
