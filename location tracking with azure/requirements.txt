@@ -1,0 +1,23 @@
+# python3 -m venv .venv
+# .venv\Scripts\activate.bat
+# pip install -r requirements.txt
+# az storage account update --name <storage_account_name> --resource-group <resource_group_name> --allow-blob-public-access true
+#  az maps account create --name gps-sensor-map --resource-group gps-sensor --accept-tos --sku G2 --kind Gen2
+# az storage account blob-service-properties cors-rule add --account-name mystorageaccount --resource-group myresourcegroup --allowed-origins "http://*.contoso.com" --allowed-methods PUT GET --max-age 200
+counterfit
+counterfit_shims_grove
+Werkzeug==2.2.2
+counterfit-shims-serial
+azure-iot-device
+azure-functions
+azure-storage-blob
+
+# PrimaryKey ->>> B3tJUlfPUa082HPJcSJ_hYsdq91dEUTBUzRIKgnYqQU
+# azurite --location azurite
+
+
+# using postman
+    # POST -----> https://us.atlas.microsoft.com/mapData/upload?api-version=1.0&dataFormat=geojson&subscription-key=<subscription_key>
+    # GET -----> <location>&subscription-key=<subscription_key>
+
+    # UDID 43d58c74-a71c-0fbf-37ab-671358333d53

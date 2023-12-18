@@ -1,0 +1,372 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="This tutorial shows how to create an interactive search experience." />
+    <meta name="keywords"
+        content="Microsoft maps, map, gis, API, SDK, services, module, tutorials, search, point of interest, POI" />
+    <meta name="author" content="Microsoft Azure Maps" />
+    <meta name="version" content="1.0" />
+    <meta name="screenshot" content="screenshot.jpg" />
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css" rel="stylesheet" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js"></script>
+
+    <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
+    <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
+
+    <script type='text/javascript'>
+        function init() {
+            var features, geofence = [], geofenceCoordinates = [
+                [
+                    31.353503499758745,
+                    31.362799873736353
+                ],
+                [
+                    31.287339498158072,
+                    31.360007449104288
+                ],
+                [
+                    31.221824299255097,
+                    31.351657562574022
+                ],
+                [
+                    31.157599996309333,
+                    31.337832092651976
+                ],
+                [
+                    31.0952953473742,
+                    31.318666561777363
+                ],
+                [
+                    31.03551931521067,
+                    31.294348736124462
+                ],
+                [
+                    30.978854851636267,
+                    31.265116689884444
+                ],
+                [
+                    30.925853000323265,
+                    31.231256357988187
+                ],
+                [
+                    30.877027386005768,
+                    31.193098607249958
+                ],
+                [
+                    30.83284915089313,
+                    31.151015861352843
+                ],
+                [
+                    30.793742391056742,
+                    31.105418319875834
+                ],
+                [
+                    30.76008013691204,
+                    31.056749815619707
+                ],
+                [
+                    30.732180912919215,
+                    31.005483357784925
+                ],
+                [
+                    30.710305902527665,
+                    30.95211641107664
+                ],
+                [
+                    30.694656735425795,
+                    30.897165962564767
+                ],
+                [
+                    30.685373905539564,
+                    30.841163429138213
+                ],
+                [
+                    30.682535820124833,
+                    30.78464945870325
+                ],
+                [
+                    30.68615847285969,
+                    30.72816867794129
+                ],
+                [
+                    30.696195727161633,
+                    30.672264438525154
+                ],
+                [
+                    30.712540190091925,
+                    30.617473612264476
+                ],
+                [
+                    30.735024652188994,
+                    30.564321483780848
+                ],
+                [
+                    30.76342406438551,
+                    30.513316787072572
+                ],
+                [
+                    30.79745801977375,
+                    30.46494692978397
+                ],
+                [
+                    30.83679370533144,
+                    30.41967344620673
+                ],
+                [
+                    30.881049286731965,
+                    30.377927717065848
+                ],
+                [
+                    30.929797687950693,
+                    30.340106991027795
+                ],
+                [
+                    30.98257072645466,
+                    30.30657073965375
+                ],
+                [
+                    31.038863564231118,
+                    30.27763737423816
+                ],
+                [
+                    31.098139434683905,
+                    30.253581349648694
+                ],
+                [
+                    31.159834605420556,
+                    30.23463067693566
+                ],
+                [
+                    31.223363537092318,
+                    30.220964863121715
+                ],
+                [
+                    31.28812419866731,
+                    30.212713293224326
+                ],
+                [
+                    31.353503499758745,
+                    30.2099540662092
+                ],
+                [
+                    31.418882800850174,
+                    30.212713293224326
+                ],
+                [
+                    31.48364346242516,
+                    30.220964863121715
+                ],
+                [
+                    31.54717239409693,
+                    30.23463067693566
+                ],
+                [
+                    31.60886756483358,
+                    30.253581349648694
+                ],
+                [
+                    31.668143435286368,
+                    30.27763737423816
+                ],
+                [
+                    31.724436273062828,
+                    30.30657073965375
+                ],
+                [
+                    31.777209311566793,
+                    30.340106991027795
+                ],
+                [
+                    31.82595771278552,
+                    30.377927717065848
+                ],
+                [
+                    31.870213294186048,
+                    30.41967344620673
+                ],
+                [
+                    31.90954897974374,
+                    30.46494692978397
+                ],
+                [
+                    31.943582935131978,
+                    30.513316787072572
+                ],
+                [
+                    31.971982347328492,
+                    30.56432148378085
+                ],
+                [
+                    31.994466809425564,
+                    30.617473612264476
+                ],
+                [
+                    32.01081127235585,
+                    30.672264438525154
+                ],
+                [
+                    32.020848526657794,
+                    30.72816867794129
+                ],
+                [
+                    32.024471179392656,
+                    30.78464945870325
+                ],
+                [
+                    32.021633093977925,
+                    30.841163429138213
+                ],
+                [
+                    32.012350264091694,
+                    30.897165962564767
+                ],
+                [
+                    31.99670109698982,
+                    30.95211641107664
+                ],
+                [
+                    31.97482608659827,
+                    31.005483357784925
+                ],
+                [
+                    31.946926862605448,
+                    31.056749815619707
+                ],
+                [
+                    31.913264608460743,
+                    31.105418319875834
+                ],
+                [
+                    31.874157848624357,
+                    31.151015861352843
+                ],
+                [
+                    31.82997961351172,
+                    31.193098607249958
+                ],
+                [
+                    31.781153999194224,
+                    31.231256357988187
+                ],
+                [
+                    31.728152147881218,
+                    31.265116689884444
+                ],
+                [
+                    31.671487684306815,
+                    31.294348736124462
+                ],
+                [
+                    31.61171165214329,
+                    31.318666561777363
+                ],
+                [
+                    31.549407003208152,
+                    31.337832092651976
+                ],
+                [
+                    31.48518270026239,
+                    31.351657562574022
+                ],
+                [
+                    31.419667501359413,
+                    31.360007449104288
+                ],
+                [
+                    31.353503499758745,
+                    31.362799873736353
+                ]];
+            // Create a new geofence polygon feature
+            var geofencePolygon = new atlas.data.Feature(new atlas.data.Polygon([geofenceCoordinates]));
+
+            // Push the geofence to the geofence array
+            geofence.push(geofencePolygon);
+
+            var map = new atlas.Map('myMap', {
+                center: [31.025554000000003, 30.28356],
+                zoom: 7,
+                authOptions: {
+                    authType: "subscriptionKey",
+                    subscriptionKey: "<subscription_key>",
+
+                }
+            });
+            fetch("https://<storage_name>.blob.core.windows.net/gps-data/?restype=container&comp=list")
+                .then(response => {
+                    return response.text();
+                }).then(response => {
+                    return new window.DOMParser().parseFromString(response, "text/xml");
+                }).then(response => {
+                    let blobList = Array.from(response.querySelectorAll("Url"));
+                    blobList.forEach(async blobURL => {
+                        features = loadJSON(blobURL.innerHTML);
+                    })
+
+                }).then(response => {
+                    map.events.add('ready', function () {
+                        var source = new atlas.source.DataSource();
+                        source.add(features);
+                        console.log(features);
+                        map.sources.add(source);
+                        map.layers.add(new atlas.layer.BubbleLayer(source));
+
+                        // Create a new data source for the geofence
+                        var geofenceSource = new atlas.source.DataSource();
+
+                        // Add the geofence source to the map
+                        map.sources.add(geofenceSource);
+
+                        // Create a new layer to display the geofence
+                        var geofenceLayer = new atlas.layer.PolygonLayer(geofenceSource, null, {
+                            fillColor: 'rgba(0, 0, 255, 0.6)',
+                            strokeColor: 'blue',
+                            strokeWidth: 2
+                        });
+
+                        // Add the geofence layer to the map
+                        map.layers.add(geofenceLayer);
+
+                        // Add the geofence feature to the geofence source
+                        geofenceSource.add(geofence);
+                    })
+                })
+        }
+
+        function loadJSON(file) {
+            var xhr = new XMLHttpRequest();
+            features = [];
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        gps = JSON.parse(xhr.responseText)
+                        features.push(
+                            new atlas.data.Feature(new atlas.data.Point([parseFloat(gps.gps.lon), parseFloat(gps.gps.lat)]))
+                        )
+                        console.log(gps.gps.lon + "," + gps.gps.lat);
+                    }
+                }
+            };
+            xhr.open("GET", file, true);
+            xhr.send();
+            return features;
+        }
+    </script>
+    <style>
+        #myMap {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="myMap"></div>
+</body>
+
+</html>
