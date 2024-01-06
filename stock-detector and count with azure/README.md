@@ -67,6 +67,7 @@
         <img src="images\publish.png" alt="" > 
 
     ### 6- Once published, select the Prediction URL button, and copy url and prediction-ket to `app.py file in camera-sensor folder`
+
     <img src="images\url.png" alt="" > 
 
     
