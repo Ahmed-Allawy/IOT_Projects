@@ -1,4 +1,4 @@
-# Truck location with Azure (transporstion)
+# Fruit quality detector with azure
 
 * Azure IoT architecture
 <center>
