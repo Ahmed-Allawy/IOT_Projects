@@ -1,0 +1,11 @@
+# python3 -m venv .venv
+# .venv\Scripts\activate.bat
+# pip install -r requirements.txt
+
+counterfit
+Werkzeug==2.2.2
+counterfit_shims_picamera
+azure-cognitiveservices-vision-customvision
+Pillow
+msrest
+shapely
