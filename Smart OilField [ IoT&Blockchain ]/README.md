@@ -29,6 +29,4 @@ The project aims to develop a robust and secure system for monitoring and contro
 
 ## At this repo you will find first component [IoT devices] for athor Components:
 - front/back end [link](https://github.com/abd3llahyoussef/Simple-Decentralized-Oil-Field-App)
-
-
-
+- smart contract [link](https://sepolia.etherscan.io/address/0xd0ae9F331d306dA48E7119028413771b0F36FdC1#code)
