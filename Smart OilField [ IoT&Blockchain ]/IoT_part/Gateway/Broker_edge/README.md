@@ -1,1 +1,0 @@
-# We used Hivemq broker, you can download it from [here](https://www.hivemq.com/download/)
