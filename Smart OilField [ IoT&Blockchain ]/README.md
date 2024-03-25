@@ -27,8 +27,8 @@ The project aims to develop a robust and secure system for monitoring and contro
 - Ensuring secure and efficient interaction between the backend, frontend, and blockchain.
 
 
-## At this repo you will find first component [IoT devices] for athor Components ->  [link](https://www.youtube.com/playlist?list=PLT7V65iweHPHmZhDeHxaFKk1YfSPd9cn9)
-
+## At this repo you will find first component [IoT devices] for athor Components:
+- front/back end [link](https://github.com/abd3llahyoussef/Simple-Decentralized-Oil-Field-App)
 
 
 
